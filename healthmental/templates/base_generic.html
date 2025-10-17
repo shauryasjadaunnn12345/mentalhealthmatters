@@ -1,0 +1,349 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta name="theme-color" content="#0a4d68">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://kit.fontawesome.com">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style">
+  <link rel="preload" href="https://shaurya-bucket-5763394.s3.eu-north-1.amazonaws.com/woman-7529904.png" as="image">
+  
+  <!-- Minimized Font Awesome -->
+  <script src="https://kit.fontawesome.com/f50c49f8a4.js" crossorigin="anonymous" defer></script>
+  
+  {% block title %}
+  <title>Free Mental Health Tests & Assessments | OCD, ADHD, Depression & More</title>
+  {% endblock title %}
+
+  <meta name="description" content="Take scientifically validated mental health tests for OCD, ADHD, depression, anxiety, bipolar disorder, PTSD, autism, and more. Get instant results and resources for your mental wellbeing journey.">
+  <meta name="keywords" content="mental health test, online mental health assessment, OCD test, ADHD test, depression test, anxiety test, bipolar test, PTSD assessment, autism screening, mental wellbeing, psychological evaluation">
+  <meta name="author" content="Mentalhealthmatters Team">
+  <link rel="canonical" href="https://mentalhealthmatters.sbs/">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Free Mental Health Tests & Assessments | OCD, ADHD, Depression & More">
+  <meta property="og:description" content="Take scientifically validated mental health tests for OCD, ADHD, depression, anxiety, bipolar disorder, PTSD, autism, and more. Get instant results and resources.">
+  <meta property="og:image" content="https://shaurya-bucket-5763394.s3.eu-north-1.amazonaws.com/Screenshot+2025-04-17+193421.png">
+  <meta property="og:url" content="https://mentalhealthmatters.sbs">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MentalHealthMatters">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Mental Health Tests & Assessments | OCD, ADHD, Depression & More">
+  <meta name="twitter:description" content="Take scientifically validated mental health tests for OCD, ADHD, depression, anxiety, bipolar disorder, PTSD, autism, and more.">
+  <meta name="twitter:image" content="https://shaurya-bucket-5763394.s3.eu-north-1.amazonaws.com/Screenshot+2025-04-17+193421.png">
+  <meta name="twitter:site" content="@MentalHealthMatters">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://shaurya-bucket-5763394.s3.eu-north-1.amazonaws.com/Screenshot+2025-04-17+193421.png">
+  <link rel="apple-touch-icon" href="https://shaurya-bucket-5763394.s3.eu-north-1.amazonaws.com/Screenshot+2025-04-17+193421.png">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "name": "Mental Health Tests and Assessments",
+    "description": "Free online mental health assessments for various conditions including OCD, ADHD, depression, anxiety, and more.",
+    "url": "https://mentalhealthmatters.sbs/",
+    "mainEntity": {
+      "@type": "MedicalCondition",
+      "name": "Mental Health Disorders",
+      "possibleTreatment": {
+        "@type": "MedicalTherapy",
+        "name": "Assessment and Evaluation"
+      }
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "MentalHealthMatters",
+      "url": "https://mentalhealthmatters.sbs/"
+    }
+  }
+  </script>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MBWNCM2EJ7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MBWNCM2EJ7');
+  </script>
+
+  {% block style %}
+  {% endblock style %}
+<link rel="stylesheet" href="{% static 'base_generic.css' %}">
+
+</head>
+
+<body>
+  <nav class="navbar">
+    <a href="/" class="logo">
+      <i class="fas fa-brain"></i>
+      MentalHealthMatters
+    </a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Tests</a>
+        <div class="dropdown-content">
+          <a href="{% url 'ocd_detail' %}">OCD Tests</a>
+          <a href="{% url 'anxiety' %}">Anxiety Disorder Tests</a>
+          <a href="{% url 'dep' %}">Depression Tests</a>
+          <a href="{% url 'bipolar' %}">Bipolar Disorder Tests</a>
+          <a href="{% url 'ptsd' %}">PTSD Tests</a>
+          <a href="{% url 'schizophrenia' %}">Schizophrenia Tests</a>
+          <a href="{% url 'adhd' %}">ADHD Tests</a>
+          <a href="{% url 'autism' %}">Autism Tests</a>
+          <a href="{% url 'panic' %}">Panic Disorder Tests</a>
+          <a href="{% url 'sleep' %}">Sleep Disorder Tests</a>
+        </div>
+      </div>
+      <a href="{% url 'about' %}">About Us</a>
+      <a href="{% url 'contact' %}">Contact Us</a>
+    </div>
+
+    <div class="actions">
+      {% if user.is_authenticated %}
+        <div class="user-profile">
+          <i class="fas fa-user-circle" style="font-size: 1.8rem; color: var(--primary);"></i>
+          <span style="margin-left: 8px; font-weight: 600; color: var(--text-dark);">{{ user.username }}</span>
+        </div>
+        <form action="{% url 'logout' %}" method="post">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-login">Logout</button>
+        </form>
+      {% else %}
+        <a href="{% url 'login' %}" class="btn btn-login">Login</a>
+        <a href="{% url 'signup' %}" class="btn btn-signup">Get Started</a>
+      {% endif %}
+    </div>
+
+    <div class="mobile-menu-icon" onclick="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="/">Home</a>
+    <a href="#">Tests</a>
+    <a href="{% url 'ocd_detail' %}">OCD Tests</a>
+    <a href="{% url 'anxiety' %}">Anxiety Disorder Tests</a>
+    <a href="{% url 'dep' %}">Depression Tests</a>
+    <a href="{% url 'bipolar' %}">Bipolar Disorder Tests</a>
+    <a href="{% url 'ptsd' %}">PTSD Tests</a>
+    <a href="{% url 'schizophrenia' %}">Schizophrenia Tests</a>
+    <a href="{% url 'adhd' %}">ADHD Tests</a>
+    <a href="{% url 'autism' %}">Autism Tests</a>
+    <a href="{% url 'panic' %}">Panic Disorder Tests</a>
+    <a href="{% url 'sleep' %}">Sleep Disorder Tests</a>
+    <a href="{% url 'about' %}">About Us</a>
+    <a href="{% url 'contact' %}">Contact Us</a>
+
+    {% if user.is_authenticated %}
+      <div class="user-profile" style="margin: 1rem 0;">
+        <i class="fas fa-user-circle" style="font-size: 1.8rem; color: var(--primary);"></i>
+        <span style="margin-left: 8px; font-weight: 600; color: var(--text-dark);">{{ user.username }}</span>
+      </div>
+      <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-login">Logout</button>
+      </form>
+    {% else %}
+      <a href="{% url 'login' %}" class="btn btn-login">Login</a>
+      <a href="{% url 'signup' %}" class="btn btn-signup">Get Started</a>
+    {% endif %}
+  </div>
+
+  {% block body %}
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Take Control of Your Mental Wellbeing</h1>
+      <p>Access scientifically validated mental health assessments and get personalized insights to support your journey toward better mental health. Our evidence-based tools are designed to help you understand your emotional patterns, identify potential concerns, and take proactive steps toward improved psychological wellness.</p>
+      <a href="#tests" class="hero-btn">Start Your Assessment</a>
+    </div>
+  </section>
+
+  <section id="tests" class="test-section">
+    <div class="section-header">
+      <h2>Comprehensive Mental Health Tests</h2>
+      <p>Our evidence-based assessments cover a wide range of mental health conditions to help you better understand your emotional and psychological wellbeing. Each test has been developed by mental health professionals and validated through clinical research to provide accurate insights into your mental health status.</p>
+    </div>
+    
+    <div class="test-grid">
+      <div class="test-card">
+        <h3>OCD Assessment</h3>
+        <p>Evaluate symptoms of Obsessive-Compulsive Disorder with our validated screening tool. This assessment helps identify obsessive thoughts and compulsive behaviors that may be impacting your daily life and wellbeing.</p>
+        <a href="{% url 'ocd_detail' %}" class="btn">Start Test</a>
+      </div>
+      
+      <div class="test-card">
+        <h3>ADHD Evaluation</h3>
+        <p>Assess attention deficit hyperactivity disorder symptoms in adults and children. This comprehensive evaluation examines inattention, hyperactivity, and impulsivity patterns that may indicate ADHD.</p>
+        <a href="{% url 'adhd' %}" class="btn">Start Test</a>
+      </div>
+      
+      <div class="test-card">
+        <h3>Depression Screening</h3>
+        <p>Identify signs of depression and understand your emotional health status. This assessment evaluates mood patterns, energy levels, and behavioral changes associated with depressive disorders.</p>
+        <a href="{% url 'dep' %}" class="btn">Start Test</a>
+      </div>
+      
+      <div class="test-card">
+        <h3>Anxiety Assessment</h3>
+        <p>Evaluate symptoms of generalized anxiety disorder and other anxiety conditions. This tool helps measure excessive worry, physical symptoms, and avoidance behaviors related to anxiety.</p>
+        <a href="{% url 'anxiety' %}" class="btn">Start Test</a>
+      </div>
+      
+      <div class="test-card">
+        <h3>Bipolar Disorder Test</h3>
+        <p>Screen for bipolar disorder symptoms and mood fluctuations. This assessment helps identify patterns of mania, hypomania, and depression that may indicate bipolar spectrum conditions.</p>
+        <a href="{% url 'bipolar' %}" class="btn">Start Test</a>
+      </div>
+      
+      <div class="test-card">
+        <h3>PTSD Evaluation</h3>
+        <p>Assess post-traumatic stress disorder symptoms and their impact on your life. This evaluation examines trauma responses, intrusive memories, and avoidance behaviors associated with PTSD.</p>
+        <a href="{% url 'ptsd' %}" class="btn">Start Test</a>
+      </div>
+      
+      <div class="test-card">
+        <h3>Schizophrenia Screening</h3>
+        <p>Early detection tool for schizophrenia symptoms and psychotic disorders. This assessment helps identify unusual thoughts, perceptions, and behaviors that may require professional attention.</p>
+        <a href="{% url 'schizophrenia' %}" class="btn">Start Test</a>
+      </div>
+      
+      <div class="test-card">
+        <h3>Autism Spectrum Test</h3>
+        <p>Evaluate traits associated with autism spectrum conditions in adults. This screening tool examines social communication patterns, sensory sensitivities, and repetitive behaviors.</p>
+        <a href="{% url 'autism' %}" class="btn">Start Test</a>
+      </div>
+      
+      <div class="test-card">
+        <h3>Panic Disorder Assessment</h3>
+        <p>Identify symptoms of panic disorder and panic attacks. This evaluation helps assess unexpected panic episodes, anticipatory anxiety, and avoidance behaviors related to panic disorder.</p>
+        <a href="{% url 'panic' %}" class="btn">Start Test</a>
+      </div>
+      
+      <div class="test-card">
+        <h3>Sleep Disorder Evaluation</h3>
+        <p>Assess sleep quality and identify potential sleep disorders. This comprehensive tool examines sleep patterns, insomnia symptoms, and daytime fatigue that may indicate sleep-related issues.</p>
+        <a href="{% url 'sleep' %}" class="btn">Start Test</a>
+      </div>
+    </div>
+  </section>
+  {% endblock body %}
+
+  <script>
+    function toggleMobileMenu() {
+      const mobileNav = document.getElementById('mobileNav');
+      mobileNav.classList.toggle('show');
+    }
+    
+    // Add scroll effect to navbar
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+      } else {
+        navbar.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.05)';
+      }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Add animation to test cards on scroll
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.test-card').forEach(card => {
+      card.style.opacity = 0;
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(card);
+    });
+  </script>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section about">
+        <h2>MentalHealthMatters</h2>
+        <p>Your trusted partner in mental wellbeing. We provide evidence-based assessments, personalized insights, and supportive resources to help you understand and improve your mental health. Our mission is to make mental health care accessible, understandable, and actionable for everyone.</p>
+        <div class="social-icons">
+          <a href="https://facebook.com" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.twitter.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-section links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="#tests">Mental Health Tests</a></li>
+          <li><a href="{% url 'about' %}">About Us</a></li>
+          <li><a href="{% url 'contact' %}">Contact Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Mental Health Resources</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section contact">
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-envelope" style="margin-right: 10px;"></i> <a href="mailto:MentalHealthMatters@gmail.com" style="text-decoration:none;color:var(--text-light)">MentalHealthMatters@gmail.com</a></p>
+        <p><i class="fas fa-phone" style="margin-right: 10px;"></i> <a href="tel:+918218647730" style="text-decoration:none;color:var(--text-light)">+91 821 864 7730</a></p>
+        <p><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> <a href="https://www.google.com/maps/@28.6424805,77.411477,14.29z" style="text-decoration:none;color:var(--text-light)">Ghaziabad, Uttar Pradesh, India</a></p>
+        <p><i class="fas fa-clock" style="margin-right: 10px;"></i> Mon-Fri: 9AM-6PM IST</p>
+      </div>
+      
+      <div class="footer-section newsletter">
+        <h3>Stay Updated</h3>
+        <p>Subscribe to our newsletter for mental health tips, resources, and updates. Join our community committed to mental wellness.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© 2025 MentalHealthMatters. All Rights Reserved. | <a href="#" style="color: var(--text-light);">Privacy Policy</a> | <a href="#" style="color: var(--text-light);">Terms of Service</a> | <a href="#" style="color: var(--text-light);">Accessibility</a></p>
+      <p>This website provides information and self-assessment tools, not professional medical advice. Always consult with a qualified healthcare provider for diagnosis and treatment.</p>
+    </div>
+  </footer>
+</body>
+</html>

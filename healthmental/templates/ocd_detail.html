@@ -1,0 +1,208 @@
+{% extends "base_generic.html" %}
+{% block title %}
+  <title>Free OCD Test – Screen for Obsessive Compulsive Disorder | MentalHealthMatters</title>
+  <meta name="description" content="Take this free online OCD test to identify symptoms of obsessive-compulsive disorder. Instantly understand your thoughts and behavior patterns. No email or sign-up required.">
+  <link rel="canonical" href="https://mentalhealthmatters.sbs/ocd" />
+{% endblock title %}
+{% block style %}
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f9fafa;
+    color: #222;
+  }
+  
+  main {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  .h1class {
+    color: #004080;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  a.button {
+    display: inline-block;
+    background: #007b5e;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+  }
+  a.button:hover {
+    background: #005f4a;
+  }
+  .section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eaeaea;
+  }
+  ul {
+    padding-left: 1.25rem;
+  }
+  .highlight-box {
+    background-color: #f0f7ff;
+    border-left: 4px solid #007b5e;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    border-radius: 0 5px 5px 0;
+  }
+  .testimonial {
+    font-style: italic;
+    color: #555;
+    padding: 1rem;
+    border-radius: 5px;
+    background: #f9f9f9;
+    margin: 1.5rem 0;
+  }
+  .testimonial-author {
+    font-style: normal;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 0.5rem;
+    color: #007b5e;
+  }
+</style>
+{% endblock style %}
+{% block body %}
+
+<header>
+  <h1 class="h1class">Free OCD Test – Check for Obsessive Thoughts & Compulsive Behaviors</h1>
+  <p>Take our science-backed OCD screening quiz to better understand your mental health. No email or account needed. Get immediate results with evidence-based insights.</p>
+</header>
+
+<main>
+  <section class="section">
+    <h2 class="h1class">What is OCD (Obsessive-Compulsive Disorder)?</h2>
+    <p>Obsessive-Compulsive Disorder (OCD) is a common but often misunderstood mental health condition. It involves persistent, intrusive thoughts (obsessions) and repetitive actions or rituals (compulsions) that individuals feel driven to perform. These patterns can become disruptive and interfere with daily life, relationships, and work or school performance.</p>
+    
+    <div class="highlight-box">
+      <p><strong>Did you know?</strong> OCD affects approximately 2-3% of the global population, making it one of the more common mental health conditions worldwide.</p>
+    </div>
+    
+    <p>OCD symptoms can manifest in many forms, including cleanliness rituals, fear of harm, checking behaviors, or mental compulsions. Identifying early signs of OCD is the first step to gaining control and finding support.</p>
+    
+    <p>The cycle of OCD typically follows a pattern:</p>
+    <ol>
+      <li><strong>Obsession:</strong> An unwanted, intrusive thought, image, or urge causes significant anxiety</li>
+      <li><strong>Anxiety:</strong> The obsession triggers intense distress, worry, or fear</li>
+      <li><strong>Compulsion:</strong> Repetitive behaviors or mental acts performed to reduce the anxiety</li>
+      <li><strong>Temporary Relief:</strong> The compulsion provides brief relief, reinforcing the cycle</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2 class="h1class">About the OCD Self-Test</h2>
+    <ul>
+      <li><strong>Time Required:</strong> Just 3–5 minutes</li>
+      <li><strong>Accessibility:</strong> Free and mobile-friendly</li>
+      <li><strong>Privacy:</strong> We don't collect your data—ever</li>
+      <li><strong>Format:</strong> 20 easy-to-answer screening questions</li>
+      <li><strong>Result:</strong> Instant personalized feedback</li>
+    </ul>
+    
+    <div class="testimonial">
+      <p>"This test helped me recognize patterns I'd been struggling with for years. The results gave me the courage to seek professional help."</p>
+      <div class="testimonial-author">- Priya K., Mumbai</div>
+    </div>
+    
+    <p>This test is designed for teens, adults, students, parents, and anyone curious about OCD symptoms. It’s not a diagnostic tool, but it’s a valuable first step in recognizing compulsive behaviors and obsessive thinking patterns.</p>
+    
+    <p>Our questionnaire is based on the Yale-Brown Obsessive Compulsive Scale (Y-BOCS), a widely used clinical assessment tool adapted for self-screening purposes.</p>
+    
+    <a href="{% url 'ybocs_input'%}" class="button">Start the Free OCD Test Now</a>
+  </section>
+
+  <section class="section">
+    <h2 class="h1class">Who Should Take This OCD Quiz?</h2>
+    <p>This quiz is ideal if you:</p>
+    <ul>
+      <li>Struggle with repetitive thoughts you can't control</li>
+      <li>Feel compelled to perform rituals like checking or cleaning</li>
+      <li>Worry excessively about making mistakes or causing harm</li>
+      <li>Experience anxiety when you can’t follow certain routines</li>
+      <li>Want to learn whether your habits may be signs of OCD</li>
+    </ul>
+    
+    <div class="highlight-box">
+      <p><strong>Common OCD Themes:</strong> Contamination, symmetry/ordering, forbidden thoughts, harm-related concerns, and hoarding tendencies.</p>
+    </div>
+    
+    <p>It’s especially helpful for people living in India and globally who may not have easy access to mental health professionals. It’s completely anonymous and secure.</p>
+  </section>
+
+  <section class="section">
+    <h2 class="h1class">How OCD Affects Daily Life</h2>
+    <p>Left unrecognized, OCD can deeply impact your quality of life. It can cause distress in relationships, reduce productivity at work or school, and contribute to chronic anxiety. People often feel isolated, ashamed, or misunderstood. But OCD is treatable—with awareness, therapy, and the right tools, many people find relief and build healthier routines.</p>
+    
+    <p>OCD can affect various aspects of daily functioning:</p>
+    <ul>
+      <li><strong>Time Consumption:</strong> Rituals can take hours each day, interfering with responsibilities</li>
+      <li><strong>Relationship Strain:</strong> Family members may not understand the compulsions</li>
+      <li><strong>Work/School Impact:</strong> Difficulty concentrating due to intrusive thoughts</li>
+      <li><strong>Physical Health:</strong> Neglect of self-care due to time spent on rituals</li>
+      <li><strong>Emotional Toll:</strong> Feelings of shame, embarrassment, and frustration</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>What Happens After the Test?</h2>
+    <p>Once you complete the test, you'll receive a summary of your responses with suggestions on what your patterns might indicate. We’ll guide you with:</p>
+    <ul>
+      <li>A breakdown of obsessive vs compulsive traits</li>
+      <li>Possible levels of OCD symptoms</li>
+      <li>Suggestions for next steps and self-help tips</li>
+      <li>Links to licensed counselors and mental health resources</li>
+    </ul>
+    
+    <div class="highlight-box">
+      <p><strong>Important:</strong> Your results are completely confidential. We don't store any personal information or test responses.</p>
+    </div>
+    
+    <p>If your results suggest potential OCD symptoms, we recommend:</p>
+    <ol>
+      <li>Discussing your results with a mental health professional</li>
+      <li>Exploring evidence-based treatments like Cognitive Behavioral Therapy (CBT)</li>
+      <li>Learning about Exposure and Response Prevention (ERP) therapy</li>
+      <li>Considering support groups for individuals with OCD</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2 class="h1class">Treatment Options for OCD</h2>
+    <p>While OCD can feel overwhelming, effective treatments are available. The most evidence-based approaches include:</p>
+    
+    <ul>
+      <li><strong>Cognitive Behavioral Therapy (CBT):</strong> Helps identify and change thought patterns</li>
+      <li><strong>Exposure and Response Prevention (ERP):</strong> Gradually facing fears without performing compulsions</li>
+      <li><strong>Medication:</strong> SSRIs (selective serotonin reuptake inhibitors) can help manage symptoms</li>
+      <li><strong>Mindfulness Techniques:</strong> Learning to observe thoughts without judgment</li>
+    </ul>
+    
+    <p>Early intervention significantly improves outcomes. With proper treatment, many people experience substantial reduction in symptoms and improved quality of life.</p>
+  </section>
+
+  <section class="section">
+    <h2 class="h1class">Disclaimer</h2>
+    <p>This OCD quiz is meant for educational and informational purposes only. It is not intended to diagnose or treat any mental health condition. If you're experiencing distress or feel that your behaviors interfere with your life, please consult a licensed psychologist, psychiatrist, or therapist.</p>
+    
+    <div class="highlight-box">
+      <p><strong>For immediate help:</strong> If you're in crisis, please contact your local emergency services or a crisis helpline in your country.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 <strong>MentalHealthMatters.sbs</strong> • Mental health tests made simple. No cookies. No tracking. Just support.</p>
+  <p>Need help? <a href="/contact">Contact our support team</a> | <a href="/resources">View all mental health resources</a></p>
+</footer>
+
+{% endblock body %}

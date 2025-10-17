@@ -1,0 +1,346 @@
+    :root {
+      --primary: #2a3f85;
+      --primary-light: #4e73df;
+      --secondary: #6c63ff;
+      --accent: #ff6b6b;
+      --light: #f7f9fc;
+      --dark: #333;
+      --gray: #555;
+      --white: #ffffff;
+      --radius: 12px;
+      --shadow: 0 10px 30px rgba(0,0,0,0.1);
+      --transition: all 0.3s ease;
+    }
+    
+    body {
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+    .about-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    
+    .about-header {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      border-radius: var(--radius);
+      color: var(--white);
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .about-header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+      z-index: 1;
+    }
+    
+    .about-header h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .about-header p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.7;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .about-section {
+      margin: 50px 0;
+    }
+    
+    .section-title {
+      font-size: 32px;
+      color: var(--primary);
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--secondary);
+      border-radius: 2px;
+    }
+    
+    .mission-card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .mission-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: var(--secondary);
+    }
+    
+    .mission-card p {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--gray);
+      margin: 0;
+    }
+    
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+    
+    .service-icon {
+      font-size: 48px;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    
+    .service-card h3 {
+      color: var(--primary);
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+    
+    .service-card p {
+      font-size: 16px;
+      color: var(--gray);
+      flex-grow: 1;
+    }
+    
+    .disease-detail {
+      background: var(--white);
+      padding: 30px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 25px;
+    }
+    
+    .disease-detail h3 {
+      color: var(--primary);
+      font-size: 24px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .disease-detail h3 i {
+      margin-right: 10px;
+      color: var(--secondary);
+    }
+    
+    .disease-detail p, .disease-detail ul {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--gray);
+    }
+    
+    .disease-detail ul {
+      padding-left: 20px;
+    }
+    
+    .disease-detail li {
+      margin-bottom: 10px;
+    }
+    
+    .disease-detail strong {
+      color: var(--primary);
+    }
+    
+    .cta-section {
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+      border-radius: var(--radius);
+      padding: 40px;
+      text-align: center;
+      color: var(--white);
+      margin-top: 50px;
+    }
+    
+    .cta-section p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background: var(--white);
+      color: var(--primary);
+      padding: 15px 35px;
+      font-weight: bold;
+      border-radius: 50px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: var(--transition);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    
+    .team-section {
+      margin: 50px 0;
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    
+    .team-member {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 30px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .team-member:hover {
+      transform: translateY(-5px);
+    }
+    
+    .member-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 36px;
+    }
+    
+    .team-member h4 {
+      color: var(--primary);
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+    
+    .team-member p {
+      color: var(--gray);
+      font-size: 14px;
+    }
+    
+    .faq-section {
+      margin: 50px 0;
+    }
+    
+    .faq-item {
+      background: var(--white);
+      border-radius: var(--radius);
+      margin-bottom: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+    
+    .faq-question {
+      padding: 20px;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--primary);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .faq-question i {
+      transition: var(--transition);
+    }
+    
+    .faq-answer {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: var(--transition);
+      color: var(--gray);
+    }
+    
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+    
+    .faq-item.active .faq-answer {
+      padding: 0 20px 20px;
+      max-height: 500px;
+    }
+    
+    @media (max-width: 768px) {
+      .about-header h1 { font-size: 36px; }
+      .section-title { font-size: 28px; }
+      .services { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    }
+    
+    @media (max-width: 480px) {
+      .about-header h1 { font-size: 30px; }
+      .about-header p { font-size: 16px; }
+      .section-title { font-size: 24px; }
+      .service-card, .disease-detail, .mission-card { padding: 20px; }
+    }

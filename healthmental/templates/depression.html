@@ -1,0 +1,345 @@
+{% extends "base_generic.html" %} 
+{% load static %} 
+{% block title %}
+<title>Free Depression Test & Self-Assessment Tools 2025 | PHQ-9, Postpartum & Chronic Depression</title>
+{% endblock title %} 
+
+{% block style %}
+<meta content="Take a free depression test online including PHQ-9, postpartum, chronic, and clinical depression quizzes. Assess your depression, stress, and anxiety with validated tools."name=description>
+<meta content="depression questionnaire, depression test quiz, clinical depression test, postpartum depression quiz, PHQ-9 test, anxiety and depression assessment, stress anxiety and depression test, medical depression test, chronic depression test, major depression test, depression scale test, depression self diagnosis, depression self test, signs of depression test"name=keywords>
+<meta content="MindCare Team"name=author>
+<link href=https://mentalhealthmatters.sbs/depression/ rel=canonical>
+
+<style>
+.hero-sections{
+  background:url("{% static 'images/depression-bg.jpg' %}") no-repeat center center/cover;
+  color:#fff;
+  text-align:center;
+  padding:4rem 2rem;
+  border-radius:10px;
+  margin-bottom:2rem;
+  position:relative
+}
+.hero-sections::before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:rgba(0,0,0,0.6);
+  border-radius:10px;
+  z-index:1
+}
+.hero-sections h1{
+  font-size:2.8rem;
+  font-weight:700;
+  position:relative;
+  z-index:2
+}
+.hero-sections p{
+  font-size:1.2rem;
+  max-width:800px;
+  margin:1rem auto 0;
+  line-height:1.6;
+  position:relative;
+  z-index:2
+}
+.content-section{
+  max-width:1000px;
+  margin:auto;
+  padding:2rem;
+  background-color:#fff;
+  border-radius:12px;
+  box-shadow:0 5px 25px rgba(0,0,0,.05)
+}
+.content-section h2{
+  color:#2a9d8f;
+  margin-top:1.5rem;
+  padding-bottom:0.5rem;
+  border-bottom:2px solid #f0f0f0
+}
+.content-section p,.content-section ul{
+  line-height:1.7;
+  color:#333
+}
+.content-section ul {
+  padding-left:1.5rem;
+  margin-bottom:1.5rem
+}
+.content-section li {
+  margin-bottom:0.5rem;
+  line-height:1.6
+}
+.test-section{
+  margin-top:3rem;
+  text-align:center;
+  background-color:#eafaf7;
+  padding:2rem;
+  border-radius:12px
+}
+.test-section h3{
+  font-size:1.8rem;
+  margin-bottom:1rem;
+  color:#264653
+}
+.test-section p{
+  max-width:700px;
+  margin:auto;
+  color:#333
+}
+.test-section a button{
+  margin-top:1.5rem;
+  background-color:#2a9d8f;
+  color:#fff;
+  border:none;
+  padding:.8rem 1.5rem;
+  font-size:1rem;
+  border-radius:30px;
+  cursor:pointer;
+  transition:background-color .3s ease, transform .3s ease
+}
+.test-section a button:hover{
+  background-color:#21867a;
+  transform:translateY(-3px)
+}
+.info-card {
+  background-color:#f8f9fa;
+  border-left:4px solid #2a9d8f;
+  padding:1.2rem;
+  margin:1.5rem 0;
+  border-radius:0 8px 8px 0
+}
+.testimonial {
+  font-style:italic;
+  color:#555;
+  padding:1.2rem;
+  border-radius:8px;
+  background:#f0f7ff;
+  margin:1.5rem 0;
+  position:relative
+}
+.testimonial:before {
+  content:"\"";
+  font-size:3rem;
+  color:#2a9d8f;
+  position:absolute;
+  left:10px;
+  top:0
+}
+.testimonial-author {
+  font-style:normal;
+  font-weight:bold;
+  text-align:right;
+  margin-top:0.8rem;
+  color:#264653
+}
+.info-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:1.5rem;
+  margin:2rem 0
+}
+.info-card-grid {
+  background:#f8f9fa;
+  padding:1.5rem;
+  border-radius:8px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05)
+}
+.info-card-grid h3 {
+  color:#2a9d8f;
+  margin-top:0;
+  border-bottom:1px solid #e0e0e0;
+  padding-bottom:0.5rem
+}
+@media (max-width:768px){
+  .hero-sections h1{
+    font-size:2rem
+  }
+  .test-section h3{
+    font-size:1.4rem
+  }
+}
+</style>
+{% endblock style %} 
+
+{% block body %}
+<div class=hero-sections>
+  <h1>Free Depression Assessment & PHQ-9 Test</h1>
+  <p>Take our free online depression test to evaluate signs of depression, stress, and anxiety. Includes PHQ-9 and postpartum depression checklists for adults and teens.</p>
+</div>
+
+<div class=content-section>
+  <div class="info-card">
+    <p><strong>Free & Confidential:</strong> Our depression test takes just 2-3 minutes and provides instant results. No registration required - your privacy is guaranteed.</p>
+  </div>
+
+  <h2>What is Depression?</h2>
+  <p>Depression is a common but serious mood disorder that affects how you feel, think, and handle daily activities. It's more than just feeling sad or going through a rough patch - it's a persistent condition that can significantly impact your quality of life.</p>
+  
+  <p>Depression symptoms can vary from mild to severe and may include:</p>
+  <ul>
+    <li>Persistent sad, anxious, or "empty" mood</li>
+    <li>Feelings of hopelessness or pessimism</li>
+    <li>Irritability, frustration, or restlessness</li>
+    <li>Loss of interest in hobbies or activities</li>
+    <li>Decreased energy or fatigue</li>
+    <li>Moving or talking more slowly</li>
+    <li>Difficulty concentrating, remembering, or making decisions</li>
+    <li>Changes in sleep patterns</li>
+    <li>Changes in appetite or weight</li>
+    <li>Physical aches or pains without a clear cause</li>
+  </ul>
+
+  <h2>What is the PHQ-9 Depression Test?</h2>
+  <p>The PHQ-9 (Patient Health Questionnaire-9) is a scientifically validated depression screening tool used worldwide by healthcare professionals. It helps diagnose the severity of clinical and chronic depression, including symptoms like hopelessness, loss of interest, and emotional fatigue.</p>
+  
+  <p>Developed by Drs. Robert L. Spitzer, Janet B.W. Williams, Kurt Kroenke, and colleagues, the PHQ-9 is based on the nine diagnostic criteria for major depressive disorder in the DSM-IV. It has been validated in multiple studies and is widely used in clinical settings.</p>
+  
+  <div class="info-grid">
+    <div class="info-card-grid">
+      <h3>Test Details</h3>
+      <ul>
+        <li><strong>Time:</strong> 2-3 minutes</li>
+        <li><strong>Questions:</strong> 9 items</li>
+        <li><strong>Age Range:</strong> 12+ years</li>
+        <li><strong>Format:</strong> Multiple choice</li>
+      </ul>
+    </div>
+    
+    <div class="info-card-grid">
+      <h3>What We Measure</h3>
+      <ul>
+        <li>Depressive symptoms severity</li>
+        <li>Functional impairment</li>
+        <li>Suicidal ideation</li>
+        <li>Duration of symptoms</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Key Symptoms Measured</h2>
+  <ul>
+    <li>Persistent sadness or emptiness</li>
+    <li>Lack of interest or pleasure in activities</li>
+    <li>Fatigue and low energy</li>
+    <li>Insomnia or oversleeping</li>
+    <li>Appetite or weight changes</li>
+    <li>Feelings of worthlessness or guilt</li>
+    <li>Difficulty concentrating</li>
+    <li>Thoughts of death or self-harm</li>
+  </ul>
+
+  <div class="testimonial">
+    <p>This test helped me realize that what I was experiencing wasn't just normal sadness. It gave me the push I needed to talk to my doctor and get the help I needed.</p>
+    <div class="testimonial-author">- Sarah, 29</div>
+  </div>
+
+  <h2>Who Should Take This Test?</h2>
+  <p>Our free depression questionnaire is ideal for anyone experiencing stress, anxiety, or emotional changes. It can help identify postpartum depression in new mothers, major depressive disorder in adults, and stress-anxiety-depression combinations in all age groups.</p>
+  
+  <p>Consider taking this test if you:</p>
+  <ul>
+    <li>Have been feeling down or hopeless for more than two weeks</li>
+    <li>Have lost interest in activities you used to enjoy</li>
+    <li>Are experiencing changes in sleep or appetite</li>
+    <li>Have difficulty concentrating on daily tasks</li>
+    <li>Are feeling unusually tired or lacking energy</li>
+    <li>Are having thoughts of self-harm or suicide</li>
+  </ul>
+
+  <h2>Types of Depression Assessed</h2>
+  <ul>
+    <li><strong>Major Depression:</strong> Severe symptoms that interfere with your ability to work, sleep, study, eat, and enjoy life</li>
+    <li><strong>Chronic Depression (Dysthymia):</strong> Less severe but long-lasting symptoms (two years or more)</li>
+    <li><strong>Postpartum Depression:</strong> Depression that occurs after childbirth, affecting 10-15% of new mothers</li>
+    <li><strong>Depression with Anxiety:</strong> Co-occurring symptoms of both depression and anxiety disorders</li>
+    <li><strong>Clinical Depression:</strong> A formal diagnosis of depression that meets specific criteria</li>
+    <li><strong>Multidimensional Depression Spectrum:</strong> Various combinations and severity levels of depressive symptoms</li>
+  </ul>
+
+  <h2>Understanding Your Score</h2>
+  <p>Scores range from minimal to severe. After completing the quiz, you'll get personalized insights and recommendations. While this is not a medical diagnosis, it helps identify whether you may benefit from professional help.</p>
+  
+  <p>The PHQ-9 scoring system is as follows:</p>
+  <ul>
+    <li><strong>0-4 points:</strong> Minimal depression</li>
+    <li><strong>5-9 points:</strong> Mild depression</li>
+    <li><strong>10-14 points:</strong> Moderate depression</li>
+    <li><strong>15-19 points:</strong> Moderately severe depression</li>
+    <li><strong>20-27 points:</strong> Severe depression</li>
+  </ul>
+  
+  <div class="info-card">
+    <p><strong>Important:</strong> If your score indicates moderate to severe depression, or if you're having thoughts of self-harm, please seek professional help immediately.</p>
+  </div>
+
+  <h2>Treatment Options for Depression</h2>
+  <p>Depression is one of the most treatable mental health conditions. Common treatment approaches include:</p>
+  
+  <div class="info-grid">
+    <div class="info-card-grid">
+      <h3>Professional Treatments</h3>
+      <ul>
+        <li><strong>Psychotherapy:</strong> Cognitive Behavioral Therapy (CBT), Interpersonal Therapy (IPT), and other talk therapies</li>
+        <li><strong>Medication:</strong> Antidepressants like SSRIs, SNRIs, and other classes of medication</li>
+        <li><strong>Combination Therapy:</strong> Both psychotherapy and medication for moderate to severe depression</li>
+      </ul>
+    </div>
+    
+    <div class="info-card-grid">
+      <h3>Self-Help Strategies</h3>
+      <ul>
+        <li><strong>Exercise:</strong> Regular physical activity can improve mood and reduce symptoms</li>
+        <li><strong>Sleep Hygiene:</strong> Maintaining a regular sleep schedule</li>
+        <li><strong>Social Support:</strong> Connecting with friends, family, or support groups</li>
+        <li><strong>Mindfulness:</strong> Meditation and relaxation techniques</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Next Steps After Testing</h2>
+  <p>Regardless of your results, if you're concerned about your mood or mental health:</p>
+  <ul>
+    <li><strong>Consult a healthcare professional:</strong> A doctor, therapist, or counselor can provide a comprehensive evaluation.</li>
+    <li><strong>Keep a mood journal:</strong> Track your daily moods, activities, and symptoms to share with your healthcare provider.</li>
+    <li><strong>Reach out to loved ones:</strong> Don't isolate yourself - share your feelings with trusted friends or family members.</li>
+    <li><strong>Explore resources:</strong> Look into mental health organizations, online communities, and educational materials.</li>
+  </ul>
+
+  <h2>Frequently Asked Questions</h2>
+  
+  <p><strong>Is this test suitable for teenagers?</strong><br>
+  Yes, the PHQ-9 has been validated for use with adolescents 12 years and older. For younger children, we recommend consulting a pediatrician or child psychologist.</p>
+  
+  <p><strong>How accurate is this depression test?</strong><br>
+  The PHQ-9 has shown good reliability and validity in research studies, with approximately 88% sensitivity and 88% specificity for major depression.</p>
+  
+  <p><strong>Can this test diagnose depression?</strong><br>
+  No, this test is a screening tool, not a diagnostic instrument. A formal diagnosis can only be made by a qualified healthcare professional.</p>
+  
+  <p><strong>What if I'm having thoughts of self-harm?</strong><br>
+  If you're having thoughts of self-harm or suicide, please seek immediate help by contacting a crisis helpline or going to the nearest emergency room.</p>
+  
+  <p><strong>Can depression be cured?</strong><br>
+  While depression may not always be "cured" in the traditional sense, it is highly treatable. Many people experience significant improvement with proper treatment and can live full, productive lives.</p>
+
+  <div class=test-section>
+    <h3>Start the PHQ-9 Depression Test</h3>
+    <p>Take this self-assessment now and get a clearer understanding of your emotional well-being. This is a free, anonymous depression test designed for educational and personal use.</p>
+    <a href="{% url 'phq9' %}"><button>Take the PHQ-9 Test</button></a>
+    <p style="margin-top:1.5rem"><strong>Completely free • No registration required • Instant results</strong></p>
+  </div>
+
+  <h2>Disclaimer</h2>
+  <p>This depression test is intended for educational purposes only and is not a substitute for professional diagnosis or treatment. If you're experiencing severe symptoms, thoughts of self-harm, or other mental health concerns, please contact a healthcare professional or crisis helpline immediately.</p>
+  
+  <div class="info-card">
+    <p><strong>For immediate help:</strong> If you're in crisis, please contact your local emergency services or a crisis helpline in your country.</p>
+  </div>
+</div>
+
+<div class=hidden-seo-keywords style=display:none>
+  <p>Depression test online, depression self-assessment test, depression screening test, depression diagnosis test, online depression quiz, test for depression symptoms, free depression test online, clinical depression test, depression check-up test, depression evaluation online, take a depression test online, free self-assessment for depression, how to test for depression symptoms, depression test for adults, online depression diagnosis tool, quick depression test online, depression risk test online, self-diagnosis depression test, free depression screening quiz, depression test for teenagers online.</p>
+</div>
+{% endblock body %}
