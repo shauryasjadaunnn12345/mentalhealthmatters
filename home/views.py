@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import AnonymousUser, User
 from .forms import YBOCSForm
 from .models import DiagnosisResult
-
+def indexnow(request):
+    return render(request,"4f7a9b1c8e2d6f3a0b1c2d3e4f5a6b7c.txt")
 def ybocs_input(request):
     if request.method == "POST":
         form = YBOCSForm(request.POST)
@@ -743,3 +744,4 @@ def contact_view(request):
         form = ContactForm()
 
     return render(request, 'contact.html', {'form': form})
+
