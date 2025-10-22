@@ -39,6 +39,7 @@ urlpatterns = [
                             path('autism',views.autism,name="autism"),
                             path('schizophrenia/',views.schizophrenia,name="schizophrenia"),
                             path('sssc/',views.sssc,name="sssc"),
+    path("4f7a9b1c8e2d6f3a0b1c2d3e4f5a6b7c.txt/",views.indexnow,name="indexnow"),
                                  path('ptsd',views.ptsd,name="ptsd"),
                                  path('sleeptest/',views.sleeptest,name="sleeptest"),
                                  path('sleep/',views.sleep,name="sleep"),
@@ -57,3 +58,4 @@ urlpatterns = [
           path("forgotpassword/",views.forgotpassword,name="forgotpassword"),
           path("resetpassword/",views.resetpassword,name="resetpassword")
 ]
+
