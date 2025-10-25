@@ -32,7 +32,7 @@ import environ
 import dj_database_url
 from dotenv import load_dotenv
 # Application definition
-AWS_STORAGE_BUCKET_NAME ='shauryabaycket345321'
+AWS_STORAGE_BUCKET_NAME ='shaurya1234512'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_FILE_OVERWRITE = True
 load_dotenv()
@@ -162,4 +162,5 @@ STORAGES = {
     "staticfiles": {
         "BACKEND": "storages.backends.s3boto3.S3StaticStorage",
     },
+
 }
