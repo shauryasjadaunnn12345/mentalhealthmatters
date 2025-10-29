@@ -40,10 +40,16 @@
   }
 </script>
 
-<link rel="stylesheet" href="{% static 'aboutus.css' %}">
+<!-- Critical CSS for above-the-fold content -->
 
-<!-- Font Awesome for icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Load full CSS asynchronously -->
+<link rel="preload" href="{% static 'aboutus.css' %}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{% static 'aboutus.css' %}"></noscript>
+
+<!-- Preload Font Awesome -->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 {% endblock style %}
 
 {% block body %}
@@ -51,6 +57,7 @@
   <p>Want to explore your mental health today? Take one of our research-based tests and get personalized insights in minutes.</p>
   <a href="https://mentalhealthmatters.sbs/ocd/" class="cta-button">Start Your Free Test</a>
 </div>
+
 <div class="about-container">
   <div class="about-header">
     <h1>About MindCare</h1>
@@ -98,6 +105,7 @@
     </div>
   </div>
 
+  <!-- Rest of the content remains the same -->
   <div class="about-section">
     <h2 class="section-title">Understanding Anxiety Disorders</h2>
     
@@ -211,30 +219,10 @@
       </div>
     </div>
   </div>
-
 </div>
 
-<script>
-  // FAQ Accordion functionality
-  document.addEventListener('DOMContentLoaded', function() {
-    const faqItems = document.querySelectorAll('.faq-item');
-    
-    faqItems.forEach(item => {
-      const question = item.querySelector('.faq-question');
-      
-      question.addEventListener('click', () => {
-        // Toggle active class on clicked item
-        item.classList.toggle('active');
-        
-        // Close other items
-        faqItems.forEach(otherItem => {
-          if (otherItem !== item && otherItem.classList.contains('active')) {
-            otherItem.classList.remove('active');
-          }
-        });
-      });
-    });
-  });
+<!-- Minified and deferred FAQ JavaScript -->
+<script defer>
+  document.addEventListener('DOMContentLoaded',function(){const e=document.querySelectorAll(".faq-item");e.forEach(t=>{const n=t.querySelector(".faq-question");n.addEventListener("click",()=>{t.classList.toggle("active"),e.forEach(e=>{e!==t&&e.classList.contains("active")&&e.classList.remove("active")})})})});
 </script>
-
 {% endblock body %}
