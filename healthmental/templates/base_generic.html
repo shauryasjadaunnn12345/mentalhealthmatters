@@ -3,15 +3,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7277508044418574"
-     crossorigin="anonymous"></script>
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta name="theme-color" content="#0a4d68">
+  
+  <!-- Critical CSS Inlined -->
+
   
   <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://kit.fontawesome.com">
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
   
   <!-- Preload critical resources -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style">
@@ -72,19 +76,12 @@
   }
   </script>
   
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MBWNCM2EJ7"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-MBWNCM2EJ7');
-  </script>
+  <!-- Load full CSS asynchronously -->
+  <link rel="preload" href="{% static 'base_generic.css' %}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{% static 'base_generic.css' %}"></noscript>
 
   {% block style %}
   {% endblock style %}
-<link rel="stylesheet" href="{% static 'base_generic.css' %}">
-
 </head>
 
 <body>
@@ -184,6 +181,7 @@
     </div>
     
     <div class="test-grid">
+      <!-- First 4 cards load immediately -->
       <div class="test-card">
         <h3>OCD Assessment</h3>
         <p>Evaluate symptoms of Obsessive-Compulsive Disorder with our validated screening tool. This assessment helps identify obsessive thoughts and compulsive behaviors that may be impacting your daily life and wellbeing.</p>
@@ -208,92 +206,75 @@
         <a href="{% url 'anxiety' %}" class="btn">Start Test</a>
       </div>
       
-      <div class="test-card">
-        <h3>Bipolar Disorder Test</h3>
-        <p>Screen for bipolar disorder symptoms and mood fluctuations. This assessment helps identify patterns of mania, hypomania, and depression that may indicate bipolar spectrum conditions.</p>
-        <a href="{% url 'bipolar' %}" class="btn">Start Test</a>
-      </div>
-      
-      <div class="test-card">
-        <h3>PTSD Evaluation</h3>
-        <p>Assess post-traumatic stress disorder symptoms and their impact on your life. This evaluation examines trauma responses, intrusive memories, and avoidance behaviors associated with PTSD.</p>
-        <a href="{% url 'ptsd' %}" class="btn">Start Test</a>
-      </div>
-      
-      <div class="test-card">
-        <h3>Schizophrenia Screening</h3>
-        <p>Early detection tool for schizophrenia symptoms and psychotic disorders. This assessment helps identify unusual thoughts, perceptions, and behaviors that may require professional attention.</p>
-        <a href="{% url 'schizophrenia' %}" class="btn">Start Test</a>
-      </div>
-      
-      <div class="test-card">
-        <h3>Autism Spectrum Test</h3>
-        <p>Evaluate traits associated with autism spectrum conditions in adults. This screening tool examines social communication patterns, sensory sensitivities, and repetitive behaviors.</p>
-        <a href="{% url 'autism' %}" class="btn">Start Test</a>
-      </div>
-      
-      <div class="test-card">
-        <h3>Panic Disorder Assessment</h3>
-        <p>Identify symptoms of panic disorder and panic attacks. This evaluation helps assess unexpected panic episodes, anticipatory anxiety, and avoidance behaviors related to panic disorder.</p>
-        <a href="{% url 'panic' %}" class="btn">Start Test</a>
-      </div>
-      
-      <div class="test-card">
-        <h3>Sleep Disorder Evaluation</h3>
-        <p>Assess sleep quality and identify potential sleep disorders. This comprehensive tool examines sleep patterns, insomnia symptoms, and daytime fatigue that may indicate sleep-related issues.</p>
-        <a href="{% url 'sleep' %}" class="btn">Start Test</a>
-      </div>
+      <!-- Remaining cards will be lazy-loaded -->
+      <div class="lazy-load-container"></div>
     </div>
   </section>
   {% endblock body %}
 
+  <!-- Minified critical JavaScript -->
   <script>
-    function toggleMobileMenu() {
-      const mobileNav = document.getElementById('mobileNav');
-      mobileNav.classList.toggle('show');
-    }
-    
-    // Add scroll effect to navbar
-    window.addEventListener('scroll', function() {
-      const navbar = document.querySelector('.navbar');
-      if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-      } else {
-        navbar.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.05)';
-      }
-    });
+    function toggleMobileMenu(){const e=document.getElementById("mobileNav");e.classList.toggle("show")}window.addEventListener("scroll",function(){const e=document.querySelector(".navbar");50<window.scrollY?e.style.boxShadow="0 5px 20px rgba(0, 0, 0, 0.1)":e.style.boxShadow="0 2px 15px rgba(0, 0, 0, 0.05)"}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault(),document.querySelector(this.getAttribute("href")).scrollIntoView({behavior:"smooth"})})});
+  </script>
 
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-
-    // Add animation to test cards on scroll
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = 1;
-          entry.target.style.transform = 'translateY(0)';
+  <!-- Lazy load remaining test cards -->
+  <script defer>
+    document.addEventListener('DOMContentLoaded', function() {
+      const lazyLoadContainer = document.querySelector('.lazy-load-container');
+      const remainingCards = [
+        '<div class="test-card"><h3>Bipolar Disorder Test</h3><p>Screen for bipolar disorder symptoms and mood fluctuations. This assessment helps identify patterns of mania, hypomania, and depression that may indicate bipolar spectrum conditions.</p><a href="{% url 'bipolar' %}" class="btn">Start Test</a></div>',
+        '<div class="test-card"><h3>PTSD Evaluation</h3><p>Assess post-traumatic stress disorder symptoms and their impact on your life. This evaluation examines trauma responses, intrusive memories, and avoidance behaviors associated with PTSD.</p><a href="{% url 'ptsd' %}" class="btn">Start Test</a></div>',
+        '<div class="test-card"><h3>Schizophrenia Screening</h3><p>Early detection tool for schizophrenia symptoms and psychotic disorders. This assessment helps identify unusual thoughts, perceptions, and behaviors that may require professional attention.</p><a href="{% url 'schizophrenia' %}" class="btn">Start Test</a></div>',
+        '<div class="test-card"><h3>Autism Spectrum Test</h3><p>Evaluate traits associated with autism spectrum conditions in adults. This screening tool examines social communication patterns, sensory sensitivities, and repetitive behaviors.</p><a href="{% url 'autism' %}" class="btn">Start Test</a></div>',
+        '<div class="test-card"><h3>Panic Disorder Assessment</h3><p>Identify symptoms of panic disorder and panic attacks. This evaluation helps assess unexpected panic episodes, anticipatory anxiety, and avoidance behaviors related to panic disorder.</p><a href="{% url 'panic' %}" class="btn">Start Test</a></div>',
+        '<div class="test-card"><h3>Sleep Disorder Evaluation</h3><p>Assess sleep quality and identify potential sleep disorders. This comprehensive tool examines sleep patterns, insomnia symptoms, and daytime fatigue that may indicate sleep-related issues.</p><a href="{% url 'sleep' %}" class="btn">Start Test</a></div>'
+      ];
+      
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          lazyLoadContainer.innerHTML = remainingCards.join('');
+          observer.disconnect();
+          
+          // Add animation to newly loaded cards
+          document.querySelectorAll('.test-card').forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            
+            setTimeout(() => {
+              card.style.opacity = 1;
+              card.style.transform = 'translateY(0)';
+            }, 100);
+          });
         }
       });
-    }, observerOptions);
+      
+      observer.observe(lazyLoadContainer);
+    });
+  </script>
 
-    document.querySelectorAll('.test-card').forEach(card => {
-      card.style.opacity = 0;
-      card.style.transform = 'translateY(20px)';
-      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(card);
+  <!-- Defer non-critical scripts -->
+  <script defer>
+    // Load Google Analytics after page load
+    window.addEventListener('load', function() {
+      var script = document.createElement('script');
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-MBWNCM2EJ7';
+      script.async = true;
+      document.head.appendChild(script);
+      
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MBWNCM2EJ7');
+    });
+    
+    // Load ads after page load
+    window.addEventListener('load', function() {
+      var adsScript = document.createElement('script');
+      adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7277508044418574';
+      adsScript.crossOrigin = 'anonymous';
+      adsScript.async = true;
+      document.head.appendChild(adsScript);
     });
   </script>
 
@@ -348,5 +329,4 @@
     </div>
   </footer>
 </body>
-
 </html>
