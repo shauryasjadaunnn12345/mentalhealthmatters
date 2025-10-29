@@ -1,4 +1,5 @@
 {% extends "base_generic.html" %} 
+{% load static %}
 {% block title %}
 <title>Free Panic Disorder Test 2025. Get Free Panic Disorder Test</title>
 {% endblock title %} 
@@ -9,155 +10,37 @@
 <meta content="MindCare Team"name=author>
 <link href=https://www.mentalhealthmatters.sbs/panic rel=canonical>
 
-<style>
-.info-container{
-  max-width:960px;
-  margin:3rem auto;
-  padding:3rem 2rem;
-  background:linear-gradient(to bottom,#fff,#eef2ff,#e0e7ff);
-  border-radius:2rem;
-  box-shadow:0 20px 40px rgba(0,0,0,.08)
-}
-.info-title{
-  font-size:2.5rem;
-  font-weight:800;
-  color:#4338ca;
-  text-align:center;
-  margin-bottom:1.5rem
-}
-.info-subtitle{
-  font-size:1.75rem;
-  font-weight:600;
-  color:#4f46e5;
-  margin-top:2.5rem;
-  margin-bottom:.75rem;
-  border-bottom:2px solid #c7d2fe;
-  padding-bottom:0.5rem
-}
-.info-text{
-  font-size:1.125rem;
-  line-height:1.8;
-  color:#374151;
-  margin-bottom:1.5rem;
-  text-align:justify
-}
-.test-button{
-  display:inline-block;
-  background-color:#4f46e5;
-  color:#fff;
-  font-size:1.125rem;
-  font-weight:600;
-  padding:.9rem 2.5rem;
-  border-radius:9999px;
-  box-shadow:0 10px 20px rgba(79,70,229,.2);
-  transition:background-color .3s ease,transform .2s ease;
-  text-decoration:none;
-  text-align:center
-}
-.test-button:hover{
-  background-color:#4338ca;
-  transform:translateY(-2px)
-}
-@media (max-width:640px){
-  .info-title{
-    font-size:2rem
-  }
-  .info-subtitle{
-    font-size:1.5rem
-  }
-  .info-text{
-    font-size:1rem
-  }
-  .test-button{
-    font-size:1rem;
-    padding:.75rem 2rem
-  }
-}
-.seo-keywords{
-  display:none
-}
-.info-card {
-  background-color:#f8f9fa;
-  border-left:4px solid #4f46e5;
-  padding:1.2rem;
-  margin:1.5rem 0;
-  border-radius:0 8px 8px 0
-}
-.testimonial {
-  font-style:italic;
-  color:#555;
-  padding:1.2rem;
-  border-radius:8px;
-  background:#f0f7ff;
-  margin:1.5rem 0;
-  position:relative
-}
-.testimonial:before {
-  content:"\"";
-  font-size:3rem;
-  color:#4f46e5;
-  position:absolute;
-  left:10px;
-  top:0
-}
-.testimonial-author {
-  font-style:normal;
-  font-weight:bold;
-  text-align:right;
-  margin-top:0.8rem;
-  color:#4f46e5
-}
-.info-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
-  gap:1.5rem;
-  margin:2rem 0
-}
-.info-card-grid {
-  background:#f8f9fa;
-  padding:1.5rem;
-  border-radius:8px;
-  box-shadow:0 2px 10px rgba(0,0,0,0.05)
-}
-.info-card-grid h3 {
-  color:#4f46e5;
-  margin-top:0;
-  border-bottom:1px solid #e0e0e0;
-  padding-bottom:0.5rem
-}
-.cta-section {
-  margin-top:3rem;
-  text-align:center;
-  background-color:#e0e7ff;
-  padding:2rem;
-  border-radius:12px;
-  box-shadow:0 4px 20px rgba(0,0,0,0.1)
-}
-.cta-section h3 {
-  font-size:1.8rem;
-  margin-bottom:1rem;
-  color:#4338ca
-}
-</style>
+<!-- Critical CSS for above-the-fold content -->
+
+
+<!-- Load non-critical CSS asynchronously -->
+<link rel="preload" href="{% static 'panic.css' %}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{% static 'panic.css' %}"></noscript>
 {% endblock style %} 
 
 {% block body %}
-<div class=info-container>
-  <h1 class=info-title>Free Panic Disorder Test</h1>
+  <div class="cta-section">
+    <h3>Ready to Take the Panic Disorder Test?</h3>
+    <p class="info-text">Take this self-assessment now and get a clearer understanding of your symptoms. This is a free, anonymous panic disorder test designed for educational and personal use.</p>
+    <a class="test-button" href="{% url 'pdss' %}">🧠 Take the Panic Disorder Test</a>
+    <p style="margin-top:1.5rem"><strong>Completely free • No registration required • Instant results</strong></p>
+  </div>
+<div class="info-container">
+  <h1 class="info-title">Free Panic Disorder Test</h1>
   
   <div class="info-card">
     <p><strong>Free & Confidential:</strong> Our panic disorder test takes just 5 minutes and provides instant results. No registration required - your privacy is guaranteed.</p>
   </div>
   
-  <p class=info-text>Panic Disorder is a type of anxiety condition marked by frequent and unexpected panic attacks. These episodes may cause heart palpitations, chest tightness, trembling, and a feeling of losing control. If these symptoms are affecting your life, this self-assessment may help you understand your experience better.</p>
+  <p class="info-text">Panic Disorder is a type of anxiety condition marked by frequent and unexpected panic attacks. These episodes may cause heart palpitations, chest tightness, trembling, and a feeling of losing control. If these symptoms are affecting your life, this self-assessment may help you understand your experience better.</p>
   
-  <h2 class=info-subtitle>What is Panic Disorder?</h2>
-  <p class=info-text>Panic Disorder is an anxiety disorder characterized by recurrent, unexpected panic attacks. A panic attack is a sudden episode of intense fear that triggers severe physical reactions when there is no real danger or apparent cause. People with panic disorder often worry about when their next attack will occur and actively try to prevent future attacks by avoiding places, situations, or behaviors they associate with panic attacks.</p>
+  <h2 class="info-subtitle">What is Panic Disorder?</h2>
+  <p class="info-text">Panic Disorder is an anxiety disorder characterized by recurrent, unexpected panic attacks. A panic attack is a sudden episode of intense fear that triggers severe physical reactions when there is no real danger or apparent cause. People with panic disorder often worry about when their next attack will occur and actively try to prevent future attacks by avoiding places, situations, or behaviors they associate with panic attacks.</p>
   
-  <p class=info-text>Panic attacks typically peak within 10 minutes and subside within 20-30 minutes, but the fear of having another attack can persist and significantly impact daily life.</p>
+  <p class="info-text">Panic attacks typically peak within 10 minutes and subside within 20-30 minutes, but the fear of having another attack can persist and significantly impact daily life.</p>
   
-  <h2 class=info-subtitle>Common Symptoms of Panic Disorder</h2>
-  <p class=info-text>During a panic attack, you may experience:</p>
+  <h2 class="info-subtitle">Common Symptoms of Panic Disorder</h2>
+  <p class="info-text">During a panic attack, you may experience:</p>
   
   <div class="info-grid">
     <div class="info-card-grid">
@@ -193,8 +76,8 @@
     <div class="testimonial-author">- James, 32</div>
   </div>
   
-  <h2 class=info-subtitle>Causes and Risk Factors</h2>
-  <p class=info-text>The exact cause of panic disorder is not fully understood, but several factors may contribute:</p>
+  <h2 class="info-subtitle">Causes and Risk Factors</h2>
+  <p class="info-text">The exact cause of panic disorder is not fully understood, but several factors may contribute:</p>
   
   <ul>
     <li><strong>Genetics:</strong> Panic disorder often runs in families, suggesting a genetic predisposition.</li>
@@ -204,33 +87,10 @@
     <li><strong>Other Mental Health Conditions:</strong> Having other anxiety disorders, depression, or substance use disorders increases risk.</li>
   </ul>
   
-  <h2 class=info-subtitle>Treatment Options</h2>
-  <p class=info-text>Panic disorder is highly treatable. Common approaches include:</p>
+  <h2 class="info-subtitle">🌟 Who Should Take This Test?</h2>
+  <p class="info-text">This test is ideal if you've been dealing with recurring panic attacks or overwhelming fear without a clear cause. It's designed for adults, teens, and even concerned parents seeking help for their children.</p>
   
-  <div class="info-grid">
-    <div class="info-card-grid">
-      <h3>Psychotherapy</h3>
-      <ul>
-        <li><strong>Cognitive Behavioral Therapy (CBT):</strong> Helps identify and change thought patterns and behaviors that trigger panic attacks.</li>
-        <li><strong>Panic-Focused Psychodynamic Psychotherapy (PFPP):</strong> Explores emotional conflicts that may contribute to panic symptoms.</li>
-        <li><strong>Exposure Therapy:</strong> Gradually exposes you to feared situations in a safe environment to reduce fear responses.</li>
-      </ul>
-    </div>
-    
-    <div class="info-card-grid">
-      <h3>Medication</h3>
-      <ul>
-        <li><strong>SSRIs and SNRIs:</strong> First-line medications that help regulate serotonin and norepinephrine.</li>
-        <li><strong>Benzodiazepines:</strong> Fast-acting medications for acute panic symptoms (used short-term due to dependency risk).</li>
-        <li><strong>Beta-Blockers:</strong> Help control physical symptoms like rapid heart rate and trembling.</li>
-      </ul>
-    </div>
-  </div>
-  
-  <h2 class=info-subtitle>🌟 Who Should Take This Test?</h2>
-  <p class=info-text>This test is ideal if you've been dealing with recurring panic attacks or overwhelming fear without a clear cause. It's designed for adults, teens, and even concerned parents seeking help for their children.</p>
-  
-  <p class=info-text>Consider taking this test if you:</p>
+  <p class="info-text">Consider taking this test if you:</p>
   <ul>
     <li>Experience sudden, intense episodes of fear or discomfort</li>
     <li>Worry frequently about having another panic attack</li>
@@ -239,17 +99,17 @@
     <li>Feel like your panic attacks are interfering with your daily life, work, or relationships</li>
   </ul>
   
-  <h2 class=info-subtitle>🧠 What to Expect</h2>
-  <p class=info-text>The questionnaire will ask about physical and emotional symptoms tied to panic and anxiety. It's brief, easy to complete, and offers instant feedback to help you consider your next steps.</p>
+  <h2 class="info-subtitle">🧠 What to Expect</h2>
+  <p class="info-text">The questionnaire will ask about physical and emotional symptoms tied to panic and anxiety. It's brief, easy to complete, and offers instant feedback to help you consider your next steps.</p>
   
   <div class="info-card">
     <p><strong>Test Details:</strong> Our panic disorder assessment consists of 15 questions based on the Panic Disorder Severity Scale (PDSS), a widely used clinical tool. The test takes approximately 5 minutes to complete.</p>
   </div>
   
-  <h2 class=info-subtitle>📋 Understanding Your Results</h2>
-  <p class=info-text>Based on your answers, you'll receive a score with insights into whether you may benefit from speaking with a mental health professional. It is not a diagnosis but a useful guide for better mental health awareness.</p>
+  <h2 class="info-subtitle">📋 Understanding Your Results</h2>
+  <p class="info-text">Based on your answers, you'll receive a score with insights into whether you may benefit from speaking with a mental health professional. It is not a diagnosis but a useful guide for better mental health awareness.</p>
   
-  <p class=info-text>Your results will indicate:</p>
+  <p class="info-text">Your results will indicate:</p>
   <ul>
     <li><strong>Minimal Panic Symptoms:</strong> Your responses suggest few or no panic disorder symptoms.</li>
     <li><strong>Mild Panic Symptoms:</strong> You may experience some panic symptoms that don't significantly interfere with your life.</li>
@@ -257,47 +117,16 @@
     <li><strong>Severe Panic Symptoms:</strong> Your symptoms appear to be causing significant distress and impairment in multiple areas of your life.</li>
   </ul>
   
-  <h2 class=info-subtitle>Next Steps After Testing</h2>
-  <p class=info-text>Regardless of your results, if you're concerned about panic symptoms:</p>
-  <ul>
-    <li><strong>Consult a healthcare professional:</strong> A doctor, therapist, or counselor can provide a comprehensive evaluation.</li>
-    <li><strong>Keep a panic journal:</strong> Track your panic attacks, including triggers, symptoms, and duration.</li>
-    <li><strong>Learn about panic disorder:</strong> Understanding the condition can help reduce fear and uncertainty.</li>
-    <li><strong>Practice relaxation techniques:</strong> Deep breathing, progressive muscle relaxation, and mindfulness can help manage symptoms.</li>
-  </ul>
+
   
-  <h2 class=info-subtitle>Frequently Asked Questions</h2>
-  
-  <p class=info-text><strong>Is this test suitable for teenagers?</strong><br>
-  Yes, this test is appropriate for teens 13 years and older. For younger children, we recommend consulting a pediatrician or child psychologist.</p>
-  
-  <p class=info-text><strong>How accurate is this panic disorder test?</strong><br>
-  This test is based on the Panic Disorder Severity Scale (PDSS), which has been validated in clinical settings. While it's a reliable screening tool, it's not a substitute for professional diagnosis.</p>
-  
-  <p class=info-text><strong>What's the difference between panic attacks and anxiety attacks?</strong><br>
-  Panic attacks are sudden, intense episodes of fear that peak within minutes, while anxiety attacks typically build up gradually in response to a specific stressor and last longer.</p>
-  
-  <p class=info-text><strong>Can panic disorder be cured?</strong><br>
-  While there's no absolute "cure" for panic disorder, it's highly treatable. With proper treatment, most people experience significant reduction in symptoms and can lead fulfilling lives.</p>
-  
-  <p class=info-text><strong>Should I go to the emergency room during a panic attack?</strong><br>
-  If you're experiencing chest pain, difficulty breathing, or other symptoms that could indicate a medical emergency, it's best to seek immediate medical care, especially if it's your first panic attack.</p>
-  
-  <div class="cta-section">
-    <h3>Ready to Take the Panic Disorder Test?</h3>
-    <p class=info-text>Take this self-assessment now and get a clearer understanding of your symptoms. This is a free, anonymous panic disorder test designed for educational and personal use.</p>
-    <a class=test-button href="{% url 'pdss' %}">🧠 Take the Panic Disorder Test</a>
-    <p style="margin-top:1.5rem"><strong>Completely free • No registration required • Instant results</strong></p>
-  </div>
-  
-  <h2 class=info-subtitle>⚠️ Important Disclaimer</h2>
-  <p class=info-text>This is a mental health screening tool meant for educational purposes. For a full diagnosis and treatment, consult a licensed mental health provider.</p>
+  <h2 class="info-subtitle">⚠️ Important Disclaimer</h2>
+  <p class="info-text">This is a mental health screening tool meant for educational purposes. For a full diagnosis and treatment, consult a licensed mental health provider.</p>
   
   <div class="info-card">
     <p><strong>For immediate help:</strong> If you're experiencing severe panic symptoms or thoughts of self-harm, please contact your local emergency services or a crisis helpline in your country.</p>
   </div>
 </div>
 
-<div class=seo-keywords>anxiety depression test, depression and panic attacks, adhd and panic attacks, panic condition, ocd and depression test, test anxiety test, depression and anxiety diagnosis test, depression anxiety PTSD test, free panic attack test online, panic test for teens, panic disorder quiz, panic symptom checker, panic self-evaluation</div>
+<div class="seo-keywords" style="display:none">anxiety depression test, depression and panic attacks, adhd and panic attacks, panic condition, ocd and depression test, test anxiety test, depression and anxiety diagnosis test, depression anxiety PTSD test, free panic attack test online, panic test for teens, panic disorder quiz, panic symptom checker, panic self-evaluation</div>
 
 {% endblock body %}
