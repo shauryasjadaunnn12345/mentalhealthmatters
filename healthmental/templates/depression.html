@@ -10,166 +10,31 @@
 <meta content="MindCare Team"name=author>
 <link href=https://www.mentalhealthmatters.sbs/depression/ rel=canonical>
 
-<style>
-.hero-sections{
-  background:url("{% static 'images/depression-bg.jpg' %}") no-repeat center center/cover;
-  color:#fff;
-  text-align:center;
-  padding:4rem 2rem;
-  border-radius:10px;
-  margin-bottom:2rem;
-  position:relative
-}
-.hero-sections::before {
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  background:rgba(0,0,0,0.6);
-  border-radius:10px;
-  z-index:1
-}
-.hero-sections h1{
-  font-size:2.8rem;
-  font-weight:700;
-  position:relative;
-  z-index:2
-}
-.hero-sections p{
-  font-size:1.2rem;
-  max-width:800px;
-  margin:1rem auto 0;
-  line-height:1.6;
-  position:relative;
-  z-index:2
-}
-.content-section{
-  max-width:1000px;
-  margin:auto;
-  padding:2rem;
-  background-color:#fff;
-  border-radius:12px;
-  box-shadow:0 5px 25px rgba(0,0,0,.05)
-}
-.content-section h2{
-  color:#2a9d8f;
-  margin-top:1.5rem;
-  padding-bottom:0.5rem;
-  border-bottom:2px solid #f0f0f0
-}
-.content-section p,.content-section ul{
-  line-height:1.7;
-  color:#333
-}
-.content-section ul {
-  padding-left:1.5rem;
-  margin-bottom:1.5rem
-}
-.content-section li {
-  margin-bottom:0.5rem;
-  line-height:1.6
-}
-.test-section{
-  margin-top:3rem;
-  text-align:center;
-  background-color:#eafaf7;
-  padding:2rem;
-  border-radius:12px
-}
-.test-section h3{
-  font-size:1.8rem;
-  margin-bottom:1rem;
-  color:#264653
-}
-.test-section p{
-  max-width:700px;
-  margin:auto;
-  color:#333
-}
-.test-section a button{
-  margin-top:1.5rem;
-  background-color:#2a9d8f;
-  color:#fff;
-  border:none;
-  padding:.8rem 1.5rem;
-  font-size:1rem;
-  border-radius:30px;
-  cursor:pointer;
-  transition:background-color .3s ease, transform .3s ease
-}
-.test-section a button:hover{
-  background-color:#21867a;
-  transform:translateY(-3px)
-}
-.info-card {
-  background-color:#f8f9fa;
-  border-left:4px solid #2a9d8f;
-  padding:1.2rem;
-  margin:1.5rem 0;
-  border-radius:0 8px 8px 0
-}
-.testimonial {
-  font-style:italic;
-  color:#555;
-  padding:1.2rem;
-  border-radius:8px;
-  background:#f0f7ff;
-  margin:1.5rem 0;
-  position:relative
-}
-.testimonial:before {
-  content:"\"";
-  font-size:3rem;
-  color:#2a9d8f;
-  position:absolute;
-  left:10px;
-  top:0
-}
-.testimonial-author {
-  font-style:normal;
-  font-weight:bold;
-  text-align:right;
-  margin-top:0.8rem;
-  color:#264653
-}
-.info-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
-  gap:1.5rem;
-  margin:2rem 0
-}
-.info-card-grid {
-  background:#f8f9fa;
-  padding:1.5rem;
-  border-radius:8px;
-  box-shadow:0 2px 10px rgba(0,0,0,0.05)
-}
-.info-card-grid h3 {
-  color:#2a9d8f;
-  margin-top:0;
-  border-bottom:1px solid #e0e0e0;
-  padding-bottom:0.5rem
-}
-@media (max-width:768px){
-  .hero-sections h1{
-    font-size:2rem
-  }
-  .test-section h3{
-    font-size:1.4rem
-  }
-}
-</style>
+<!-- Preload critical image -->
+<link rel="preload" href="{% static 'images/depression-bg.jpg' %}" as="image">
+
+<!-- Critical CSS for above-the-fold content -->
+
+
+<!-- Load non-critical CSS asynchronously -->
+<link rel="preload" href="{% static 'depression.css' %}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{% static 'depression.css' %}"></noscript>
 {% endblock style %} 
 
 {% block body %}
-<div class=hero-sections>
+  <div class="test-section">
+    <h3>Start the PHQ-9 Depression Test</h3>
+    <p>Take this self-assessment now and get a clearer understanding of your emotional well-being. This is a free, anonymous depression test designed for educational and personal use.</p>
+    <a href="{% url 'phq9' %}"><button>Take the PHQ-9 Test</button></a>
+    <p style="margin-top:1.5rem"><strong>Completely free • No registration required • Instant results</strong></p>
+  </div>
+
+<div class="hero-sections">
   <h1>Free Depression Assessment & PHQ-9 Test</h1>
   <p>Take our free online depression test to evaluate signs of depression, stress, and anxiety. Includes PHQ-9 and postpartum depression checklists for adults and teens.</p>
 </div>
 
-<div class=content-section>
+<div class="content-section">
   <div class="info-card">
     <p><strong>Free & Confidential:</strong> Our depression test takes just 2-3 minutes and provides instant results. No registration required - your privacy is guaranteed.</p>
   </div>
@@ -324,12 +189,6 @@
   <p><strong>Can depression be cured?</strong><br>
   While depression may not always be "cured" in the traditional sense, it is highly treatable. Many people experience significant improvement with proper treatment and can live full, productive lives.</p>
 
-  <div class=test-section>
-    <h3>Start the PHQ-9 Depression Test</h3>
-    <p>Take this self-assessment now and get a clearer understanding of your emotional well-being. This is a free, anonymous depression test designed for educational and personal use.</p>
-    <a href="{% url 'phq9' %}"><button>Take the PHQ-9 Test</button></a>
-    <p style="margin-top:1.5rem"><strong>Completely free • No registration required • Instant results</strong></p>
-  </div>
 
   <h2>Disclaimer</h2>
   <p>This depression test is intended for educational purposes only and is not a substitute for professional diagnosis or treatment. If you're experiencing severe symptoms, thoughts of self-harm, or other mental health concerns, please contact a healthcare professional or crisis helpline immediately.</p>
@@ -339,7 +198,7 @@
   </div>
 </div>
 
-<div class=hidden-seo-keywords style=display:none>
+<div class="hidden-seo-keywords" style="display:none">
   <p>Depression test online, depression self-assessment test, depression screening test, depression diagnosis test, online depression quiz, test for depression symptoms, free depression test online, clinical depression test, depression check-up test, depression evaluation online, take a depression test online, free self-assessment for depression, how to test for depression symptoms, depression test for adults, online depression diagnosis tool, quick depression test online, depression risk test online, self-diagnosis depression test, free depression screening quiz, depression test for teenagers online.</p>
 </div>
 
